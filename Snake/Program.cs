@@ -10,6 +10,20 @@ namespace Snake
     {
         static void Main(string[] args)
         {
+            Console.SetBufferSize(120, 30);
+
+            HorizontalLine hl1 = new HorizontalLine(0, 119, 1, '*');
+            hl1.Draw();
+            VertiсalLine vl1 = new VertiсalLine(119, 0, 29, '*');
+            vl1.Draw();
+            HorizontalLine hl2 = new HorizontalLine(0, 119, 29, '*');
+            hl2.Draw();
+            VertiсalLine vl2 = new VertiсalLine(0, 0, 29, '*');
+            vl2.Draw();
+
+            Console.ReadKey();
+
+
         }
     }
 }
