@@ -20,7 +20,7 @@ namespace Snake
 
         List<Point> horList;
 
-        public void Drow()
+        public void Draw()
         {
             foreach (var item in horList)
             {

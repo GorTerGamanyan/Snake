@@ -11,12 +11,21 @@ namespace Snake
         public VertiсalLine(int x,int yUp, int yDown, char symbol)
         {
             vertLine = new List<Point>();
-            for (int y =yRight 0; y < length; y++)
+            for (int y =yUp; y < yDown; y++)
             {
-
+                Point p = new Point(x, y, symbol);
+                vertLine.Add(p);
             }
         }
 
         List<Point> vertLine;
+
+        public void Draw()
+        {
+            foreach (var item in vertLine)
+            {
+                item.Draw();
+            }
+        }
     }
 }
