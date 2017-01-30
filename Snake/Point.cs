@@ -8,6 +8,11 @@ namespace Snake
 {
     class Point
     {
+        public Point()
+        {
+
+        }
+
         public Point(int x, int y, char symbol)
         {
             this.x = x;

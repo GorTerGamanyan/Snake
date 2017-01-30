@@ -17,7 +17,5 @@ namespace Snake
                 lineList.Add(p);
             }
         }
-
-        
     }
 }
