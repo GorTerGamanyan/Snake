@@ -8,5 +8,14 @@ namespace Snake
 {
     class Figur
     {
+        protected List<Point> lineList;
+
+        public void Draw()
+        {
+            foreach (var item in lineList)
+            {
+                item.Draw();
+            }
+        }
     }
 }
