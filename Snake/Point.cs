@@ -13,6 +13,13 @@ namespace Snake
 
         }
 
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            symbol = p.symbol;
+        }
+
         public Point(int x, int y, char symbol)
         {
             this.x = x;
@@ -23,6 +30,27 @@ namespace Snake
         public int x;
         public int y;
         public char symbol;
+
+        public void Move(int offset,Direction direct)
+        {
+            if (direct == Direction.Right)
+            {
+                x += offset;
+            }
+            else if (direct == Direction.Left)
+            {
+                x -= offset;
+            }
+            else if (direct == Direction.Up)
+            {
+                y -= offset;
+            }
+            else if (direct == Direction.Down)
+            {
+                y += offset;
+            }
+
+        }
 
         public void Draw()
         {
