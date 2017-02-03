@@ -40,5 +40,25 @@ namespace Snake
             nextPoint.Move(1, direct);
             return nextPoint;
         }
+
+        public void HandalKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+            {
+                direct = Direction.Left;
+            }
+            else if (key == ConsoleKey.RightArrow)
+            {
+                direct = Direction.Right;
+            }
+            else if (key == ConsoleKey.UpArrow)
+            {
+                direct = Direction.Up;
+            }
+            else if (key == ConsoleKey.DownArrow)
+            {
+                direct = Direction.Down;
+            }
+        }
     }
 }
