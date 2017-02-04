@@ -46,7 +46,7 @@ namespace Snake
                     ConsoleKeyInfo key = Console.ReadKey();
                     snak.HandalKey(key.Key);
                 }
-                Thread.Sleep(300);
+                Thread.Sleep(100);
                 snak.Move();
 
             }
