@@ -10,7 +10,7 @@ namespace Snake
     {
         public FoodCreate(int widthMap,int heightMap,char symbol)
         {
-            rnd = new Random();
+            
             this.widthMap = widthMap;
             this.heightMap = heightMap;
             this.symbol = symbol;
@@ -18,7 +18,7 @@ namespace Snake
         int widthMap;
         int heightMap;
         char symbol;
-        Random rnd;
+        Random rnd= new Random();
 
         public Point CreateFood()
         {
