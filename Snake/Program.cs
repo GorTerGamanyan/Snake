@@ -21,21 +21,31 @@ namespace Snake
             
             Snake snak = new Snake(new Point(10, 8, '*'), 4, Direction.Right);
             snak.Draw();
-
+            FoodCreate fc = new FoodCreate(120, 30, '+');
+            Point food = fc.CreateFood();
             while (true)
             {
+                if (snak.IsEat(food))
+                {
+                    food = fc.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snak.Move();
+                }
                 
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snak.HandalKey(key.Key);
                 }
-                Thread.Sleep(300);
+                Thread.Sleep(100);
                 snak.Move();
 
             }
 
-            Console.ReadKey();
+            
 
 
         }
