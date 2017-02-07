@@ -11,10 +11,13 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetBufferSize(120, 30);
+            int width = 120;
+            int height = 30;
+            Console.SetBufferSize(width, height);
+            //Console.SetWindowSize(120, 30);
 
-            Wall wall = new Wall();
-            wall.Draw();
+            Wall wall = new Wall(width,height);
+            
             
             Snake snak = new Snake(new Point(10, 8, '*'), 4, Direction.Right);
             snak.Draw();
@@ -35,7 +38,7 @@ namespace Snake
                         ConsoleKeyInfo key = Console.ReadKey();
                         snak.HandalKey(key.Key);
                     }
-                    Thread.Sleep(150);
+                    Thread.Sleep(100);
                     snak.Move();
                 }
 
