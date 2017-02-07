@@ -8,29 +8,35 @@ namespace Snake
 {
     class Wall : Figur
     {
-        List<Figur> fList;
+        List<Figur> wallList;
 
         public Wall(int widthMap,int heightMap)
         {
-            fList = new List<Figur>();
+            wallList = new List<Figur>();
 
             HorizontalLine hl1 = new HorizontalLine(0, widthMap-2, 0, '*');
             VertiсalLine vl1 = new VertiсalLine(widthMap - 2, 0, heightMap - 2, '*');
             HorizontalLine hl2 = new HorizontalLine(0, widthMap - 2, heightMap - 2, '*');
             VertiсalLine vl2 = new VertiсalLine(0, 0, heightMap - 2, '*');
 
-            fList.Add(hl1);
-            fList.Add(vl1);
-            fList.Add(hl2);
-            fList.Add(vl2);
+            wallList.Add(hl1);
+            wallList.Add(vl1);
+            wallList.Add(hl2);
+            wallList.Add(vl2);
 
-            foreach (var item in fList)
+            foreach (var item in wallList)
             {
                 item.Draw();
             }
         }
 
+        public bool IsHit(Figur figur)
+        {
+            foreach (var wall in collection)
+            {
 
+            }   
+        }
         
     }
 }
