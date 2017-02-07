@@ -64,7 +64,6 @@ namespace Snake
             Console.Write(symbol);
         }
 
-
         public bool IsHit(Point p)
         {
             return p.x == this.x && p.y == this.y;

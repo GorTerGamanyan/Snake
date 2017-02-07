@@ -32,10 +32,14 @@ namespace Snake
 
         public bool IsHit(Figur figur)
         {
-            foreach (var wall in collection)
+            foreach (var wall in wallList)
             {
-
-            }   
+                if (wall.IsHit(figur))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         
     }

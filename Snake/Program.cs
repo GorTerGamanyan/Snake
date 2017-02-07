@@ -26,6 +26,10 @@ namespace Snake
             food.Draw();
             while (true)
             {
+                if (wall.IsHit(snak))
+                {
+                    break;
+                }
                 if (snak.IsEat(food))
                 {
                     food = fc.CreateFood();
