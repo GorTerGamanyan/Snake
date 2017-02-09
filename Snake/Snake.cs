@@ -33,6 +33,19 @@ namespace Snake
             
         }
 
+        internal bool IsHitTall()
+        {
+            Point head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                {
+                    return true;
+                }
+            }
+                return false;
+        }
+
         public Point GetNextPoint()
         {
             Point head = pList.Last();
@@ -63,9 +76,17 @@ namespace Snake
         public bool IsEat(Point food)
         {
             Point head = GetNextPoint();
+            Point secondHead = pList[pList.Count - 2];
             if (head.IsHit(food))
             {
                 food.symbol = head.symbol;
+                pList.Add(food);
+                return true;
+            }
+            else if (secondHead.IsHit(food))
+            {
+                food = GetNextPoint();
+                food.symbol = secondHead.symbol;
                 pList.Add(food);
                 return true;
             }
